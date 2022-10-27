@@ -10,7 +10,14 @@
     "node": true,
     "jest/globals": true
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false,
+      "presets": ["@babel/preset-env", "@babel/preset-react"]
+    },
     "sourceType": "module",
     "ecmaVersion": 2022
   },

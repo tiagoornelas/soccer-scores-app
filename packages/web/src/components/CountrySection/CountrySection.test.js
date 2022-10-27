@@ -1,5 +1,4 @@
-import React from "react";
-import CountrySection from "./CountrySection";
+// import CountrySection from "./CountrySection";
 import { screen } from "@testing-library/react";
 import { render } from "../../utils/helpers/testing";
 
@@ -48,8 +47,8 @@ describe("<CountrySection>", () => {
               "https://apiv3.apifootball.com/badges/logo_country/5_italy.png",
             league_year: "2022/2023",
             fk_stage_key: "321",
-            stage_name: "Group I"
-          }
+            stage_name: "Group I",
+          },
         ]}
       />
     );
