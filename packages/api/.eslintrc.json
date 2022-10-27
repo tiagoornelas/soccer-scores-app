@@ -1,0 +1,3 @@
+{
+  "extends": ["@soccer-scores-app/eslint-config-node"]
+}

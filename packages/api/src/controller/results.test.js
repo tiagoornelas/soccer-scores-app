@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 import { buildReq, buildRes, buildNext } from "../utils/helpers/testing";
 
-describe.skip("Live Controller", () => {
+describe("Live Controller", () => {
   it("calls fetchLiveMatches function to fetch from external API", async () => {
     jest.unstable_mockModule("../service/results", () => ({
       getPastMatchesByDate: jest.fn(() => []),

@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@soccer-scores-app/web",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,6 +11,7 @@
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.14",
     "@fontsource/open-sans": "^4.5.13",
+    "@soccer-scores-app/eslint-config-node": "1.0.0",
     "@tanstack/react-query": "^4.13.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -28,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [

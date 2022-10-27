@@ -6,7 +6,7 @@ import {
   MATCH_LIVE,
   WIDGET_KEY,
   TIMEZONE,
-  DETAILS
+  DETAILS,
 } from "../utils/constants/service.js";
 
 async function fetchLiveMatches() {
@@ -14,7 +14,7 @@ async function fetchLiveMatches() {
     .get(
       `${API_FOOTBALL_BASE_URL}${GET_EVENTS}${MATCH_LIVE}${WIDGET_KEY}${TIMEZONE}${DETAILS}`
     )
-    .then(res => groupMatchesByCountry(res.data));
+    .then((res) => groupMatchesByCountry(res.data));
 }
 
 export { fetchLiveMatches, groupMatchesByCountry };

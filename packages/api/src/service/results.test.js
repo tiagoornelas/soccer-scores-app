@@ -2,7 +2,6 @@ import axios from "axios";
 import moment from "moment";
 import { jest } from "@jest/globals";
 import { fetchPastMatchesByDate } from "./results";
-import { groupMatchesByCountry } from "../utils/helpers/payload";
 import {
   API_FOOTBALL_BASE_URL,
   GET_EVENTS,
@@ -12,10 +11,6 @@ import {
   TIMEZONE,
   DETAILS,
 } from "../utils/constants/service";
-// import {
-//   LIVE_MATCHES_MOCK,
-//   EXPECTED_FORMATTED_ARRAY
-// } from "../utils/__mocks__/apiFootballLiveMatches.mock";
 
 jest.spyOn(axios, "get");
 
@@ -52,10 +47,5 @@ describe("Live Service", () => {
     const yesterdayCall = await shouldPopulateDatabase(yesterday);
     expect(hasEventsOnDate).toHaveBeenCalledWith(yesterday);
     expect(yesterdayCall).toBeFalsy();
-  });
-
-  it.skip("formats live matches, groupping them by tournament", () => {
-    const formattedMatches = groupMatchesByCountry(LIVE_MATCHES_MOCK);
-    expect(formattedMatches).toEqual(EXPECTED_FORMATTED_ARRAY);
   });
 });
