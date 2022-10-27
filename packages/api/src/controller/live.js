@@ -4,7 +4,7 @@ import { respondWithData } from "../utils/helpers/response.js";
 
 const router = express.Router();
 
-export async function getLiveMatches(req, res, next) {
+async function getLiveMatches(req, res, next) {
   try {
     const response = await fetchLiveMatches();
     respondWithData(res, { countries: response });

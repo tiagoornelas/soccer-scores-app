@@ -5,5 +5,14 @@
   "author": "tiagoornelas <advtiagoornelas@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["web", "api"]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "lint": "yarn lint:web & yarn lint:api",
+    "lint:web": "yarn workspace @soccer-scores-app/web lint",
+    "lint:api": "yarn workspace @soccer-scores-app/api lint"
+  }
 }

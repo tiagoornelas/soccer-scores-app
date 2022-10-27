@@ -7,13 +7,13 @@ import {
   SINGLE_DATE_RANGE_REPLACEABLE,
   WIDGET_KEY,
   TIMEZONE,
-  DETAILS
+  DETAILS,
 } from "../utils/constants/service.js";
 import { hasEventsOnDate } from "../model/results.js";
-import { groupMatchesByCountry } from "../utils/helpers/payload.js";
+// import { groupMatchesByCountry } from "../utils/helpers/payload.js";
 
 function filterByStatus(matches) {
-  return matches.filter(match =>
+  return matches.filter((match) =>
     ["Finished", "After Pen."].includes(match.match_status)
   );
 }
@@ -34,7 +34,7 @@ async function fetchPastMatchesByDate(date) {
         date
       )}${WIDGET_KEY}${TIMEZONE}${DETAILS}`
     )
-    .then(res => filterByStatus(res.data));
+    .then((res) => filterByStatus(res.data));
 }
 
 export { fetchPastMatchesByDate, shouldPopulateDatabase };

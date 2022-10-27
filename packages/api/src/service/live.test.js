@@ -14,7 +14,7 @@ import {
 import {
   LIVE_MATCHES_MOCK,
   EXPECTED_FORMATTED_ARRAY,
-} from "../utils/__mocks__/apiFootballLiveMatches.mock";
+} from "../utils/mocks/apiFootballLiveMatches.mock";
 
 jest.spyOn(axios, "get");
 
