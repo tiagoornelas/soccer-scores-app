@@ -1,5 +1,4 @@
 import mongoConnection from "../connection/database.js";
-import { assureFinisehdMatchesOnly } from "../utils/helpers/payload.js";
 
 function populateWithFinishedMatches(matches) {
   // By bulking updating with upsert, if the match has to be updated it will be accordinlgy,
@@ -25,7 +24,7 @@ async function readFinishedMatchesByDate(date) {
   const response = await mongoConnection().then((db) =>
     db.collection("matches").find({ match_date: date }).toArray()
   );
-  return assureFinisehdMatchesOnly(response);
+  return response;
 }
 
 async function hasEventsOnDate(date) {

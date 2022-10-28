@@ -20,7 +20,7 @@ async function fetchLiveMatches() {
         withOutDetails: true,
       },
     })
-    .then((res) => groupMatchesByCountry(res.data));
+    .then((res) => res.data);
 }
 
 export { fetchLiveMatches, groupMatchesByCountry };

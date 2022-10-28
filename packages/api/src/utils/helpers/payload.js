@@ -1,10 +1,11 @@
-function groupMatchesByCountry(liveMatches) {
-  return liveMatches
-    .filter(({ match_status }) => match_status !== "Finished")
+import { semanticMatchStatusValues } from "../constants/payload.js";
+
+function groupMatchesByCountry(matches) {
+  return matches
     .map((match) => ({
       ...match,
       match_status:
-        match.match_status === "Half Time" ? "HT" : match.match_status,
+        semanticMatchStatusValues[match.match_status] || match.match_status,
     }))
     .reduce((prev, curr) => {
       const { country_id, country_name, country_logo } = curr;
@@ -30,17 +31,17 @@ function groupMatchesByCountry(liveMatches) {
     }, []);
 }
 
-function assureFinisehdMatchesOnly(matches) {
-  try {
-    return matches.filter(({ match_status }) =>
-      ["Finished", "After Pen."].includes(match_status)
-    );
-  } catch (err) {
-    console.error(
-      "⛔ Failed to assure finished matches only! All matches will be returned..."
-    );
-    return matches;
-  }
+function filterFinished(matches) {
+  return matches.filter(
+    ({ match_status }) => semanticMatchStatusValues[match_status] !== "FT"
+  );
 }
 
-export { groupMatchesByCountry, assureFinisehdMatchesOnly };
+function filterFuture(matches) {
+  return matches.filter(
+    ({ match_status }) =>
+      semanticMatchStatusValues[match_status] !== "Not begun"
+  );
+}
+
+export { groupMatchesByCountry, filterFinished, filterFuture };

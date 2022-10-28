@@ -13,6 +13,6 @@ const PORT = JSON.parse(process.env.PORT) || 8080;
 app.use("/live", routes.live, middlewares.error);
 app.use("/results", routes.results, middlewares.error);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
 export default app;

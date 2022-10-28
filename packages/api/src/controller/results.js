@@ -1,8 +1,12 @@
 import express from "express";
+import { compose } from "../utils/helpers/toolkit.js";
 import { respondWithData } from "../utils/helpers/response.js";
 import { shouldPopulateDatabase } from "../service/results.js";
-import { groupMatchesByCountry } from "../utils/helpers/payload.js";
 import { fetchPastMatchesByDate } from "../service/results.js";
+import {
+  groupMatchesByCountry,
+  filterFuture,
+} from "../utils/helpers/payload.js";
 import {
   populateWithFinishedMatches,
   readFinishedMatchesByDate,
@@ -20,11 +24,15 @@ export async function getPastMatchesByDate(req, res, next) {
         `🔃 Proxy enabled: fetching finished matches from ${date}...`
       );
       const externalData = await fetchPastMatchesByDate(date);
-      await populateWithFinishedMatches(externalData);
+      if (externalData.length > 0)
+        await populateWithFinishedMatches(externalData);
     }
 
     const data = await readFinishedMatchesByDate(date);
-    respondWithData(res, { countries: groupMatchesByCountry(data) });
+
+    respondWithData(res, {
+      countries: compose(groupMatchesByCountry, filterFuture)(data),
+    });
   } catch (err) {
     console.log(err);
     next(err);
