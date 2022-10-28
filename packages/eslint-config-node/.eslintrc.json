@@ -2,7 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:react/recommended"
   ],
   "env": {
     "es6": true,
@@ -19,9 +20,12 @@
       "presets": ["@babel/preset-env", "@babel/preset-react"]
     },
     "sourceType": "module",
-    "ecmaVersion": 2022
+    "ecmaVersion": 2022,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["jest"],
+  "plugins": ["jest", "react"],
   "rules": {
     "prettier/prettier": [
       "error",

@@ -1,4 +1,3 @@
-import React from "react";
 import { GiSoccerKick } from "react-icons/gi";
 import { Center, Heading, Highlight } from "@chakra-ui/react";
 
@@ -12,7 +11,7 @@ function Header() {
           marginTop: "16px",
           display: "flex",
           flexDirection: "row",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <GiSoccerKick style={{ marginRight: "8px" }} />
@@ -23,7 +22,7 @@ function Header() {
           styles={{
             rounded: "full",
             color: "red",
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           livesoccerscores

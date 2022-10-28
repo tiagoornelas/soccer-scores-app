@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Flex, Center, Text, Avatar } from "@chakra-ui/react";
 
@@ -10,7 +9,7 @@ function MatchCard({ match }) {
     match_awayteam_name,
     match_awayteam_score,
     team_home_badge,
-    team_away_badge
+    team_away_badge,
   } = match;
   return (
     <Flex w="100%" gap="4px" h="48px">
@@ -57,7 +56,7 @@ function MatchCard({ match }) {
 }
 
 MatchCard.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 
 export default MatchCard;

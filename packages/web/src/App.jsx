@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import "@fontsource/open-sans/400.css";
 import "@fontsource/inter/900.css";
@@ -14,38 +13,38 @@ const theme = extendTheme({
     light: "#3FC1C9",
     red: "#FC5185",
     black: "#070A0E",
-    white: "#fff"
+    white: "#fff",
   },
   fonts: {
     heading: `'Inter', sans-serif`,
-    body: `'Open Sans', sans-serif`
+    body: `'Open Sans', sans-serif`,
   },
   layerStyles: {
     base: {
       bg: "gray.50",
       border: "2px solid",
-      borderColor: "gray.500"
+      borderColor: "gray.500",
     },
     selected: {
       bg: "teal.500",
       color: "teal.700",
-      borderColor: "orange.500"
-    }
+      borderColor: "orange.500",
+    },
   },
   textStyles: {
     h1: {
       fontSize: ["48px", "72px"],
       fontWeight: "extrabold",
       lineHeight: "110%",
-      letterSpacing: "-2%"
+      letterSpacing: "-2%",
     },
     h2: {
       fontSize: ["36px", "48px"],
       fontWeight: "semibold",
       lineHeight: "110%",
-      letterSpacing: "-1%"
-    }
-  }
+      letterSpacing: "-1%",
+    },
+  },
 });
 
 const queryClient = new QueryClient();

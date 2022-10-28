@@ -1,4 +1,5 @@
-// import CountrySection from "./CountrySection";
+import React from "react";
+import CountrySection from "./CountrySection";
 import { screen } from "@testing-library/react";
 import { render } from "../../utils/helpers/testing";
 

@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 function wrappedRender(component) {
   Object.defineProperty(window, "matchMedia", {
     writable: true,
-    value: jest.fn().mockImplementation(query => ({
+    value: jest.fn().mockImplementation((query) => ({
       matches: false,
       media: query,
       onchange: null,
@@ -16,8 +16,8 @@ function wrappedRender(component) {
       removeListener: jest.fn(), // Deprecated
       addEventListener: jest.fn(),
       removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn()
-    }))
+      dispatchEvent: jest.fn(),
+    })),
   });
 
   return render(

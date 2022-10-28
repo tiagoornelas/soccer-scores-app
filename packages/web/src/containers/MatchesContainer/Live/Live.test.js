@@ -1,6 +1,5 @@
 import React from "react";
 import Live from "./Live";
-import { screen } from "@testing-library/react";
 import * as reactQuery from "@tanstack/react-query";
 import { render } from "../../../utils/helpers/testing";
 
@@ -45,7 +44,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/19_azerbaijan.png",
       league_year: "2022/2023",
       fk_stage_key: "568",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1132559",
@@ -86,7 +85,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/19_azerbaijan.png",
       league_year: "2022/2023",
       fk_stage_key: "568",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1132560",
@@ -124,7 +123,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/19_azerbaijan.png",
       league_year: "2022/2023",
       fk_stage_key: "568",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1132561",
@@ -164,7 +163,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/19_azerbaijan.png",
       league_year: "2022/2023",
       fk_stage_key: "568",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1140004",
@@ -203,7 +202,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/112_ukraine.png",
       league_year: "2022/2023",
       fk_stage_key: "2324",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1152107",
@@ -243,7 +242,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/142_kosovo.png",
       league_year: "2022/2023",
       fk_stage_key: "1811",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1154431",
@@ -282,7 +281,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
       country_logo: "",
       league_year: "2022/2023",
       fk_stage_key: "4663",
-      stage_name: "2nd Round"
+      stage_name: "2nd Round",
     },
     {
       match_id: "1047493",
@@ -321,7 +320,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/2_intl.png",
       league_year: "2022/2023",
       fk_stage_key: "5361",
-      stage_name: "Qualifying Round"
+      stage_name: "Qualifying Round",
     },
     {
       match_id: "1047494",
@@ -361,7 +360,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/2_intl.png",
       league_year: "2022/2023",
       fk_stage_key: "5361",
-      stage_name: "Qualifying Round"
+      stage_name: "Qualifying Round",
     },
     {
       match_id: "1047495",
@@ -399,7 +398,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/2_intl.png",
       league_year: "2022/2023",
       fk_stage_key: "5361",
-      stage_name: "Qualifying Round"
+      stage_name: "Qualifying Round",
     },
     {
       match_id: "1139662",
@@ -440,7 +439,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/152_ethiopia.png",
       league_year: "2022/2023",
       fk_stage_key: "1821",
-      stage_name: "Current"
+      stage_name: "Current",
     },
     {
       match_id: "1159131",
@@ -480,7 +479,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/68_korea-republic.png",
       league_year: "2022",
       fk_stage_key: "7276",
-      stage_name: "Relegation Round"
+      stage_name: "Relegation Round",
     },
     {
       match_id: "1159132",
@@ -521,7 +520,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
         "https://apiv3.apifootball.com/badges/logo_country/68_korea-republic.png",
       league_year: "2022",
       fk_stage_key: "7276",
-      stage_name: "Relegation Round"
+      stage_name: "Relegation Round",
     },
     {
       match_id: "1149152",
@@ -560,7 +559,7 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
       country_logo: "",
       league_year: "2022/2023",
       fk_stage_key: "4665",
-      stage_name: "Group Stage"
+      stage_name: "Group Stage",
     },
     {
       match_id: "1158647",
@@ -597,9 +596,9 @@ jest.spyOn(reactQuery, "useQuery").mockReturnValue({
       country_logo: "",
       league_year: "",
       fk_stage_key: "",
-      stage_name: ""
-    }
-  ]
+      stage_name: "",
+    },
+  ],
 });
 
 describe("<Live>", () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { VStack, Container, SkeletonText } from "@chakra-ui/react";
@@ -12,14 +12,14 @@ function Live() {
       axios.get("/live").then(
         ({
           data: {
-            payload: { countries }
-          }
+            payload: { countries },
+          },
         }) => countries
       ),
     {
       keepPreviousData: true,
       refetchInterval: 60000,
-      staleTime: 60000
+      staleTime: 60000,
     }
   );
 
@@ -37,7 +37,7 @@ function Live() {
           w="600px"
           isLoaded={status === "success" && !!data}
         >
-          {liveMatches.map(country => (
+          {liveMatches.map((country) => (
             <CountrySection
               key={country.country_id}
               countryName={country.country_name}

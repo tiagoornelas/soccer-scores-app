@@ -10,7 +10,7 @@ function CountrySection({ countryName, countryLogo, matches = [] }) {
         <Avatar src={countryLogo} size="xs" name={countryName} ml={-1} mr={2} />
         <strong>{countryName}</strong>
       </Box>
-      {matches.map(match => (
+      {matches.map((match) => (
         <MatchCard key={match.match_id} match={match} />
       ))}
     </>
@@ -20,7 +20,7 @@ function CountrySection({ countryName, countryLogo, matches = [] }) {
 CountrySection.propTypes = {
   countryName: PropTypes.string,
   countryLogo: PropTypes.string,
-  matches: PropTypes.arrayOf(PropTypes.object)
+  matches: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default CountrySection;
