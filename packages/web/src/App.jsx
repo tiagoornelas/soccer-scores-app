@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import "@fontsource/open-sans/400.css";
 import "@fontsource/inter/900.css";

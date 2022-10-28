@@ -1,16 +1,16 @@
 import React from "react";
-import Live from "./Live";
+import Results from "./Results";
 import * as reactQuery from "@tanstack/react-query";
 import { render } from "../../../utils/helpers/testing";
 
 jest.spyOn(reactQuery, "useQuery");
 
-describe("<Live>", () => {
+describe("<Results>", () => {
   function setup() {
-    render(<Live />);
+    render(<Results />);
   }
 
-  it("should render the Live component fetching live events", () => {
+  it("should render the Results component fetching Results events", () => {
     setup();
     expect(reactQuery.useQuery).toHaveBeenCalled();
   });

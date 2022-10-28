@@ -10,7 +10,6 @@ describe("<Header>", () => {
 
   it("should render the Header component with project title", () => {
     setup();
-    expect(screen.getByText("live", { exact: false })).toBeInTheDocument();
     expect(screen.getByText("soccer", { exact: false })).toBeInTheDocument();
     expect(screen.getByText("scores", { exact: false })).toBeInTheDocument();
   });
