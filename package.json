@@ -14,6 +14,7 @@
     "lint": "yarn lint:web & yarn lint:api",
     "lint:web": "yarn workspace @soccer-scores-app/web lint",
     "lint:api": "yarn workspace @soccer-scores-app/api lint",
+    "build": "yarn workspace @soccer-scores-app/web build",
     "start": "concurrently \"yarn workspace @soccer-scores-app/api start\" \"yarn workspace @soccer-scores-app/web start\""
   },
   "devDependencies": {

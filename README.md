@@ -13,7 +13,7 @@ development static testing for Eslint and Prettier (eslint-node-config)
 - Clone the repository;
 - Run `yarn` It will install all root project's, client's and server's
   dependencies;
-- Create a `.env` file with `PORT`, `DB_USERNAME`, `DB_PASSWORD` and
+- Create a `.env` file with `API_PORT`, `DB_USERNAME`, `DB_PASSWORD` and
   (`API_FOOTBALL_WIDGET_KEY`)[https://apifootball.com/]
 - For database deployment, create a (MongoDB Cluster)[https://www.mongodb.com/]
   called `soccer-score-db`

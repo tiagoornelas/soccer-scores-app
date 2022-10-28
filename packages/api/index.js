@@ -8,7 +8,7 @@ app.use(express.json());
 
 dotenv.config();
 
-const PORT = JSON.parse(process.env.PORT) || 8080;
+const PORT = JSON.parse(process.env.API_PORT) || 8080;
 
 app.use("/live", routes.live, middlewares.error);
 app.use("/results", routes.results, middlewares.error);
