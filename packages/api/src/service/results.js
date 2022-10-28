@@ -5,7 +5,6 @@ import {
   WIDGET_KEY,
 } from "../utils/constants/service.js";
 import { hasEventsOnDate } from "../model/results.js";
-// import { groupMatchesByCountry } from "../utils/helpers/payload.js";
 
 async function shouldPopulateDatabase(date) {
   // Database should be populated if requested a past date with any matches on database
