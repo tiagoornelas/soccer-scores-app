@@ -10,7 +10,6 @@ describe("<MatchesContainer>", () => {
 
   it("should render the MatchesContainer component with project tabs", () => {
     setup();
-    expect(screen.getByText("Ao vivo")).toBeInTheDocument();
-    expect(screen.getByText("Resultados")).toBeInTheDocument();
+    expect(screen.getByText("Live")).toBeInTheDocument();
   });
 });

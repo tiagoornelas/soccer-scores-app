@@ -7,7 +7,6 @@ jest.spyOn(axios, "get");
 
 describe("Live Service", () => {
   const today = moment().format("YYYY-MM-DD");
-  const yesterday = moment().subtract(1, "day").format("YYYY-MM-DD");
 
   it("calls axios function to fetch from external API", async () => {
     await fetchPastMatchesByDate(today);
@@ -17,8 +16,5 @@ describe("Live Service", () => {
   it("should check for shouldPopulateDatabase when always has events on database", async () => {
     const todayCall = await shouldPopulateDatabase(today);
     expect(todayCall).toBeTruthy();
-
-    const yesterdayCall = await shouldPopulateDatabase(yesterday);
-    expect(yesterdayCall).toBeTruthy();
   });
 });
