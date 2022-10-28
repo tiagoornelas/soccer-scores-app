@@ -12,7 +12,7 @@ describe("Live Controller", () => {
 
     const req = buildReq();
     const res = buildRes();
-    const next = buildNext((msg) => console.log(msg));
+    const next = buildNext();
 
     await getLiveMatches(req, res, next);
 

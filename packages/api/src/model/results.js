@@ -1,19 +1,40 @@
 import mongoConnection from "../connection/database.js";
-
-// async function hasEventsOnDate(date) {
-//   console.log("Has Events On Date?");
-// }
+import { assureFinisehdMatchesOnly } from "../utils/helpers/payload.js";
 
 function populateWithFinishedMatches(matches) {
+  // By bulking updating with upsert, if the match has to be updated it will be accordinlgy,
+  // but if it needs to be created, it will be inserted
+  const operations = matches.map((match) => ({
+    updateOne: {
+      filter: {
+        match_id: match.match_id,
+      },
+      update: {
+        $set: match,
+      },
+      upsert: true,
+    },
+  }));
+
   return mongoConnection().then((db) =>
-    db.collection("matches").insertMany(matches)
+    db.collection("matches").bulkWrite(operations)
   );
 }
 
-// function readFinishedMatchesByDate(date) {}
+async function readFinishedMatchesByDate(date) {
+  const response = await mongoConnection().then((db) =>
+    db.collection("matches").find({ match_date: date }).toArray()
+  );
+  return assureFinisehdMatchesOnly(response);
+}
+
+async function hasEventsOnDate(date) {
+  const response = await readFinishedMatchesByDate(date);
+  return response.length > 0;
+}
 
 export {
-  // hasEventsOnDate,
+  hasEventsOnDate,
   populateWithFinishedMatches,
-  // readFinishedMatchesByDate
+  readFinishedMatchesByDate,
 };

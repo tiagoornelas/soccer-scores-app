@@ -1,25 +1,30 @@
 import express from "express";
 import { respondWithData } from "../utils/helpers/response.js";
-// import { shouldPopulateDatabase } from "../service/results.js";
-import { populateWithFinishedMatches } from "../model/results.js";
-// import { groupMatchesByCountry } from "../utils/helpers/payload.js";
+import { shouldPopulateDatabase } from "../service/results.js";
+import { groupMatchesByCountry } from "../utils/helpers/payload.js";
 import { fetchPastMatchesByDate } from "../service/results.js";
+import {
+  populateWithFinishedMatches,
+  readFinishedMatchesByDate,
+} from "../model/results.js";
 
 const router = express.Router();
 
 export async function getPastMatchesByDate(req, res, next) {
   try {
     const { date } = req.query;
-    const shoulFetchExternalData = true;
+    const enableProxy = await shouldPopulateDatabase(date);
 
-    if (shoulFetchExternalData) {
+    if (enableProxy) {
+      console.log(
+        `🔃 Proxy enabled: fetching finished matches from ${date}...`
+      );
       const externalData = await fetchPastMatchesByDate(date);
       await populateWithFinishedMatches(externalData);
     }
 
-    // const data = await readFinishedMatchesByDate(date);
-
-    respondWithData(res, { countries: "oba" });
+    const data = await readFinishedMatchesByDate(date);
+    respondWithData(res, { countries: groupMatchesByCountry(data) });
   } catch (err) {
     console.log(err);
     next(err);

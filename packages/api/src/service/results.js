@@ -2,23 +2,16 @@ import axios from "axios";
 import moment from "moment";
 import {
   API_FOOTBALL_BASE_URL,
-  GET_EVENTS,
-  MATCH_LIVE,
-  SINGLE_DATE_RANGE_REPLACEABLE,
   WIDGET_KEY,
-  TIMEZONE,
-  DETAILS,
 } from "../utils/constants/service.js";
 import { hasEventsOnDate } from "../model/results.js";
 // import { groupMatchesByCountry } from "../utils/helpers/payload.js";
 
-function filterByStatus(matches) {
-  return matches.filter((match) =>
-    ["Finished", "After Pen."].includes(match.match_status)
-  );
-}
-
 async function shouldPopulateDatabase(date) {
+  // Database should be populated if requested a past date with any matches on database
+  // or if requesting today, when the finished matches will be upserted.
+  // If by any means a future date is requested, it will populate the database with no events and
+  // then return an empty array.
   if (moment(date, "YYYY-MM-DD").isBefore(moment(), "day")) {
     const response = await hasEventsOnDate(date);
     return !response;
@@ -28,13 +21,18 @@ async function shouldPopulateDatabase(date) {
 
 async function fetchPastMatchesByDate(date) {
   return axios
-    .get(
-      `${API_FOOTBALL_BASE_URL}${GET_EVENTS}${MATCH_LIVE}${SINGLE_DATE_RANGE_REPLACEABLE.replaceAll(
-        "[DATE]",
-        date
-      )}${WIDGET_KEY}${TIMEZONE}${DETAILS}`
-    )
-    .then((res) => filterByStatus(res.data));
+    .get(API_FOOTBALL_BASE_URL, {
+      params: {
+        action: "get_events",
+        match_live: 0,
+        from: date,
+        to: date,
+        Widgetkey: WIDGET_KEY,
+        timezone: "-03:00",
+        withOutDetails: true,
+      },
+    })
+    .then((res) => res.data);
 }
 
 export { fetchPastMatchesByDate, shouldPopulateDatabase };

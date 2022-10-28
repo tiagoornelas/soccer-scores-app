@@ -30,4 +30,17 @@ function groupMatchesByCountry(liveMatches) {
     }, []);
 }
 
-export { groupMatchesByCountry };
+function assureFinisehdMatchesOnly(matches) {
+  try {
+    return matches.filter(({ match_status }) =>
+      ["Finished", "After Pen."].includes(match_status)
+    );
+  } catch (err) {
+    console.error(
+      "⛔ Failed to assure finished matches only! All matches will be returned..."
+    );
+    return matches;
+  }
+}
+
+export { groupMatchesByCountry, assureFinisehdMatchesOnly };
