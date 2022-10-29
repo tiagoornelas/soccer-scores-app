@@ -16,7 +16,7 @@ development static testing for Eslint and Prettier (eslint-node-config)
 - Create a `.env` file with `API_PORT`, `DB_USERNAME`, `DB_PASSWORD` and
   (`API_FOOTBALL_WIDGET_KEY`)[https://apifootball.com/]
 - For database deployment, create a (MongoDB Cluster)[https://www.mongodb.com/]
-  called `soccer-score-db`
+  called `soccer-score-db`.
 
 ## Running Env
 
@@ -45,3 +45,7 @@ So, in order to do that, run `cd client` or `cd server` and then `yarn test`
   events;
 - `/results` is a get request, which accepts a date param in YYYY-MM-DD format
   which returns finished events in that specific date;
+
+## Playground Deployment
+
+The monorepo was deployed on Vercel splited in front and backend projects.
