@@ -1,6 +1,6 @@
 # Soccer Score App
 
-Fullstack Monorepo React + Node for Live Soccer Scores with demo playground deployed on (Vercel)[https://vercel.com/].
+Fullstack Monorepo React + Node for Live Soccer Scores with demo playground deployed on [Vercel](https://vercel.com/).
 
 # [Demo](https://soccer-scores-app-web.vercel.app/)
 ![image](https://user-images.githubusercontent.com/78763308/198755343-7982d0d9-2a85-49d2-965b-0c89d33ac88e.png)
@@ -38,8 +38,8 @@ development static testing for Eslint and Prettier (eslint-node-config)
 - Run `yarn` It will install all root project's, client's and server's
   dependencies;
 - Create a `.env` file with `API_PORT`, `DB_USERNAME`, `DB_PASSWORD` and
-  (`API_FOOTBALL_WIDGET_KEY`)[https://apifootball.com/]
-- For database deployment, create a (MongoDB Cluster)[https://www.mongodb.com/]
+  [`API_FOOTBALL_WIDGET_KEY`](https://apifootball.com/)
+- For database deployment, create a [MongoDB Cluster](https://www.mongodb.com/)
   called `soccer-score-db`.
 
 ## Running Env
