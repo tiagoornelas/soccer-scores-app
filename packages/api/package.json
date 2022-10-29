@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node --experimental-modules index.js",
     "start-watch": "node --experimental-modules --watch index.js",
