@@ -13,6 +13,7 @@
   "dependencies": {
     "@soccer-scores-app/eslint-config-node": "1.0.0",
     "axios": "^1.1.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "moment": "^2.29.4",
