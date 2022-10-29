@@ -1,12 +1,36 @@
 # Soccer Score App
 
-Fullstack Monorepo React + Node for Live Soccer Scores
+Fullstack Monorepo React + Node for Live Soccer Scores with demo playground deployed on (Vercel)[https://vercel.com/].
+
+# [Demo](https://soccer-scores-app-web.vercel.app/)
+![image](https://user-images.githubusercontent.com/78763308/198755343-7982d0d9-2a85-49d2-965b-0c89d33ac88e.png)
+
+## Features
+
+- Live events coverage with score and time with auto update
+- Match results (not inplay) fetched from app's database with proxy checking for assuring data liability when necessary
+- Querying on match results with `react-query` reducing amount of backend requests and load times
+
+Disclaimer: The free API version may apply some restrictions on returned data;
 
 ## Monorepo Format
 
 The project is stablished in a monorepo style based on yarn workspaces. The root
 project has 3 packages/workspaces which are: frontend (web), backend (api) and
 development static testing for Eslint and Prettier (eslint-node-config)
+
+## Folder/Repo Structure
+
+.  
+└── soccer-scores-app/  
+├── packages/  
+    │   ├── api/  
+    │   │   └── package.json  
+    │   ├── web/  
+    │   │   └── package.json  
+    │   └── eslint-node-config/  
+    │       └── package.json  
+    └── package.json  
 
 ## Instalation
 
