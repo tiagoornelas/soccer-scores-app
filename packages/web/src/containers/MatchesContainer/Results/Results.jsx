@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 import { useQuery } from "@tanstack/react-query";
 import { VStack, Container, SkeletonText } from "@chakra-ui/react";
 import CountrySection from "../../../components/CountrySection";
-
+import { BASE_URL } from "../../../utils/constants/service";
 function Results({ date }) {
   const [results, setResults] = useState([]);
   const { isLoading, isFetching, status, data } = useQuery(
     ["results", { date }],
     () =>
-      axios.get("/results", { params: { date } }).then(
+      axios.get(`${BASE_URL}/results`, { params: { date } }).then(
         ({
           data: {
             payload: { countries },

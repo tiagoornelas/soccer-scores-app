@@ -3,13 +3,14 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { VStack, Container, SkeletonText } from "@chakra-ui/react";
 import CountrySection from "../../../components/CountrySection";
+import { BASE_URL } from "../../../utils/constants/service";
 
 function Live() {
   const [liveMatches, setLiveMatches] = useState([]);
   const { status, data } = useQuery(
     ["liveMatches"],
     () =>
-      axios.get("/live").then(
+      axios.get(`${BASE_URL}/live`).then(
         ({
           data: {
             payload: { countries },
