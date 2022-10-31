@@ -1,6 +1,6 @@
 # Soccer Score App
 
-Fullstack Monorepo React + Node for Live Soccer Scores with demo playground deployed on [Vercel](https://vercel.com/).
+Fullstack Monorepo React + Node for Live Soccer Scores with demo playground deployed on Vercel.
 
 # [Demo](https://soccer-scores-app-web.vercel.app/)
 ![image](https://user-images.githubusercontent.com/78763308/198755343-7982d0d9-2a85-49d2-965b-0c89d33ac88e.png)
